@@ -1,9 +1,15 @@
 # Tweets From The Third 2016 Presidential Debate
 
-## Example
+This repo contains data on roughly XXXX debate tweets. However, to make the data compliant with Twitter's terms of service, the public data only contains tweet IDs.
 
-`python twitter_miner.py 'debate_tweets' \#hillary \#trump`
+To convert the list of tweet IDs into a full dataset, run retrieve_tweets.ipynb using your own Twitter API keys.
 
-This will mine tweets which use `#hillary` and `#trump` and save them `debate_tweets_[current date and time].csv`.
+## Run command lines
 
-_Note that if you want to mine hashtags, you have to use \ to escape the # in the command line_
+- python miner_#clinton.py 'full_data/hashtag_clinton' \#clinton
+- python miner_#debate.py 'full_data/hashtag_debate' \#debate
+- python miner_#hillary.py 'full_data/hashtag_hillary' \#hillary
+- python miner_#trump.py 'full_data/hashtag_trump' \#trump
+- python miner_clinton.py 'full_data/clinton' clinton
+- python miner_hillary.py 'full_data/hillary' hillary
+- python miner_trump.py 'full_data/trump' trump

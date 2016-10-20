@@ -7,12 +7,13 @@ from tweepy import Stream
 import time
 import csv
 import sys
+import json
 
 class StdOutListener(StreamListener):
 
     def __init__(self, api = None):
         self.api = api
-        self.filename = sys.argv[1]+'_'+time.strftime('%Y%m%d-%H%M%S')
+        self.filename = sys.argv[1]+'_'+time.strftime('%Y%m%d-%H%M%S')+'.csv'
         csvFile = open(self.filename, 'w')
 
     def on_status(self, status):
@@ -84,11 +85,16 @@ class StdOutListener(StreamListener):
         return True
 
 def start_mining():
+
+    # Import API Keys
+    with open('credentials.json') as creds:
+        credentials = json.load(creds)
+
     #Variables that contains the user credentials to access Twitter API
-    consumer_key = ""
-    consumer_secret = "5vFwZ6qV3LXRxHWyyGznWBWPq"
-    access_token = ""
-    access_token_secret = ""
+    consumer_key = credentials['twitter']['cra_twitter_miner_2']['consumer_key']
+    consumer_secret = credentials['twitter']['cra_twitter_miner_2']['consumer_secret']
+    access_token = credentials['twitter']['cra_twitter_miner_2']['access_token']
+    access_token_secret = credentials['twitter']['cra_twitter_miner_2']['access_secret']
 
     l = StdOutListener()
     auth = OAuthHandler(consumer_key, consumer_secret)
