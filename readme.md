@@ -1,6 +1,6 @@
 # Tweets From The Third 2016 Presidential Debate
 
-This repo contains data on roughly XXXX debate tweets. However, to make the data compliant with Twitter's terms of service, the public data only contains tweet IDs.
+This repo contains data on roughly 885,222 debate tweets. However, to make the data compliant with Twitter's terms of service, the public data only contains tweet IDs.
 
 To convert the list of tweet IDs into a full dataset, run retrieve_tweets.ipynb using your own Twitter API keys.
 
